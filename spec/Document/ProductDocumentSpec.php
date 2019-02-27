@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace spec\Sylius\ElasticSearchPlugin\Document;
 
-use ONGR\ElasticsearchBundle\Collection\Collection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use PhpSpec\ObjectBehavior;
 use Sylius\ElasticSearchPlugin\Document\PriceDocument;
 use Sylius\ElasticSearchPlugin\Document\ProductDocument;
@@ -70,7 +71,7 @@ final class ProductDocumentSpec extends ObjectBehavior
 
     function it_has_taxons()
     {
-        $taxons = new Collection();
+        $taxons = new ArrayCollection();
         $this->setTaxons($taxons);
 
         $this->getTaxons()->shouldReturn($taxons);
@@ -78,7 +79,7 @@ final class ProductDocumentSpec extends ObjectBehavior
 
     function it_has_attributes()
     {
-        $attributeValues = new Collection();
+        $attributeValues = new ArrayCollection();
         $this->setAttributes($attributeValues);
 
         $this->getAttributes()->shouldReturn($attributeValues);
@@ -93,7 +94,7 @@ final class ProductDocumentSpec extends ObjectBehavior
 
     function it_has_images()
     {
-        $images = new Collection();
+        $images = new ArrayCollection();
         $this->setImages($images);
 
         $this->getImages()->shouldReturn($images);

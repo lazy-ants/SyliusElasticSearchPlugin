@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace spec\Sylius\ElasticSearchPlugin\Document;
 
-use ONGR\ElasticsearchBundle\Collection\Collection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use PhpSpec\ObjectBehavior;
 use Sylius\ElasticSearchPlugin\Document\TaxonDocument;
 
@@ -31,7 +32,7 @@ final class TaxonDocumentSpec extends ObjectBehavior
 
     function it_has_images()
     {
-        $images = new Collection();
+        $images = new ArrayCollection();
         $this->setImages($images);
 
         $this->getImages()->shouldReturn($images);
